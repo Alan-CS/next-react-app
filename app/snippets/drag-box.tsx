@@ -1,6 +1,8 @@
 // Taken from: https://react.dev/learn/updating-objects-in-state#find-and-fix-the-mutation
 
 import {useState} from 'react';
+import {useImmer} from "use-immer";
+
 // import Background from './Background.js';
 // import Box from './Box.js';
 
@@ -10,7 +12,7 @@ const initialPosition = {
 };
 
 export default function Canvas() {
-    const [shape, setShape] = useState({
+    const [shape, setShape] = useImmer({
         color: 'orange',
         position: initialPosition
     });
@@ -20,22 +22,35 @@ export default function Canvas() {
     //     shape.position.x += dx;
     //     shape.position.y += dy;
     // }
+
+    // Correct way using setShape
+    // function handleMove(dx, dy) {
+    //     setShape({
+    //             ...shape,
+    //             position: {
+    //                 x: shape.position.x + dx,
+    //                 y: shape.position.y + dy
+    //             }
+    //         }
+    //     )
+    // }
+
+    // Same function as above but using immer
     function handleMove(dx, dy) {
-        setShape({
-                ...shape,
-                position: {
-                    x: shape.position.x + dx,
-                    y: shape.position.y + dy
-                }
+        setShape(
+            draft => {
+                draft.position.x += dx;
+                draft.position.y += dy;
             }
         )
     }
 
     function handleColorChange(e) {
-        setShape({
-            ...shape,
-            color: e.target.value
-        });
+        setShape(
+            draft => {
+                draft.color = e.target.value
+            }
+        )
     }
 
     return (
