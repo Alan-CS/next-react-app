@@ -29,7 +29,8 @@ export default async function Page() {
                 </div>
             </div>
 
-            <div className="p-2 mt-4 border-t-2 border-t-red-700">
+            {/*ALAN: Give this a height of h-96 otherwise content below it will overlap*/}
+            <div className="h-96 p-2 mt-4 border-t-2 border-t-red-700">
                 <h1 className="text-2xl text-center mb-4">React Docs Update Objects In State</h1>
                 <div className="relative">
                     <Canvas/>
