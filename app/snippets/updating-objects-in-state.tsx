@@ -35,25 +35,27 @@ export default function Scoreboard() {
 
     return (
         <>
-            <label className="mx-4">
-                Score: <b>{player.score}</b>
-                {' '}
-            </label>
-            <button className="inline-block w-10 bg-gray-300 border-r-2 hover:bg-lime-100" onClick={handlePlusClick}>
-                +1
-            </button>
+            <div className="mb-2">
+                <label>
+                    Score: <b>{player.score}</b>
+                    {' '}
+                </label>
+                <button className="btn-primary" onClick={handlePlusClick}>
+                    +1
+                </button>
+            </div>
 
-            <label className="block m-4">
+            <label className="block mb-2">
                 First name:
-                <input
+                <input className="ml-2"
                     value={player.firstName}
                     onChange={handleFirstNameChange}
                 />
             </label>
 
-            <label className="block m-4">
+            <label className="block mb-2">
                 Last name:
-                <input
+                <input className="ml-2"
                     value={player.lastName}
                     onChange={handleLastNameChange}
                 />

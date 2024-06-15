@@ -55,7 +55,7 @@ export default function Canvas() {
 
     return (
         <>
-            <select
+            <select className="mb-4"
                 value={shape.color}
                 onChange={handleColorChange}
             >
