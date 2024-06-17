@@ -44,8 +44,15 @@ export default function Canvas() {
     function handleMove(dx, dy) {
         setShape(
             draft => {
-                draft.position.x += dx;
-                draft.position.y += dy;
+                const newX = draft.position.x + dx;
+                const newY = draft.position.y + dy;
+                if (newX < initialPositionBox.x ||
+                    newX > initialPositionBox.x + 150
+                    || newY <  -250 || newY > -100) {
+                    return;
+                }
+                draft.position.x = newX;
+                draft.position.y = newY;
             }
         )
     }
