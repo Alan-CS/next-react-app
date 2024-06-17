@@ -12,7 +12,7 @@ export default async function Page() {
         <main className="min-h-screen flex flex-col items-center">
 
             <div className="flex w-full place-items-center -mb-10">
-                <div className="grow text-lg text-center bg-blue-100 p-4 hover:bg-blue-200">
+                <div className="grow text-lg text-center bg-blue-300 p-4 hover:bg-blue-200">
                     <Link href={'/'}>
                         Go Back Home
                     </Link>
@@ -20,11 +20,6 @@ export default async function Page() {
             </div>
 
             <div className="h-48 app-container">
-                {/*<h2 className="h2">*/}
-                {/*    <a href="https://tailwindcss.com/docs/hover-focus-and-other-states#before-and-after">*/}
-                {/*        Usage of before and after pseudoelements in Tailwind*/}
-                {/*    </a>*/}
-                {/*</h2>*/}
                 <p>
                         <a href="https://tailwindcss.com/docs/hover-focus-and-other-states#before-and-after">
                             Usage of before and after pseudoelements in Tailwind
@@ -58,7 +53,7 @@ export default async function Page() {
                 </div>
             </div>
 
-            <div className="h-96 app-container">
+            <div className="h-70 app-container">
                 <p>
                     <a href="https://react.dev/learn/updating-arrays-in-state#fix-the-mutations-using-immer">
                         React Docs ToDo App using Immer

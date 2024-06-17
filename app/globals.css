@@ -39,8 +39,12 @@ body {
     @apply pt-2 pb-6 mt-20 flex flex-col justify-center items-center;
   }
 
+  .app-container:last-of-type {
+    @apply mb-64
+  }
+
   .app-container > p {
-    @apply flex justify-items-start md:justify-center px-4 py-2 mb-10 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl rounded-xl border-1 bg-gray-500 hover:bg-gray-400
+    @apply flex justify-items-start md:justify-center px-4 py-2 mb-10 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl rounded-xl border-1 bg-gray-500 hover:bg-gray-400 text-blue-600
   }
 
   .h2 {
