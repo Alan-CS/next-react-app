@@ -12,9 +12,9 @@ export default async function Page() {
         <main className="min-h-screen flex flex-col items-center">
 
             <div className="flex w-full place-items-center -mb-10">
-                <div className="grow text-lg text-center bg-blue-300 p-4 hover:bg-blue-200">
-                    <Link href={'/'}>
-                        Go Back Home
+                <div className="grow text-sm text-center bg-blue-400 p-4 hover:bg-blue-300 bg-gradient-to-b from-zinc-200 italic">
+                    <Link href={'/'} >
+                        <span className="text-md"> Go Back Home </span>
                     </Link>
                 </div>
             </div>
