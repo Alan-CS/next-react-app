@@ -13,7 +13,7 @@ export default function Home() {
                 such as Tailwind CSS etc. A developer interested in React centered technologies can use it as a learning and experimentation tool.
             </p>
 
-            <p className="flex justify-items-start md:justify-center bg-gradient-to-b from-zinc-200 px-4 py-2 backdrop-blur-2xl rounded-xl border-1 bg-gray-400 hover:bg-gray-300 ">
+            <p className="flex justify-items-start md:justify-center bg-gradient-to-b from-zinc-200 px-4 py-2 backdrop-blur-2xl rounded-xl border-1 bg-gray-500 hover:bg-gray-400 ">
                 <Link href={'/snippets'}> Click here to view sample apps </Link>
             </p>
 

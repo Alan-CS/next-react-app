@@ -6,15 +6,20 @@ import {useImmer} from "use-immer";
 // import Background from './Background.js';
 // import Box from './Box.js';
 
-const initialPosition = {
+const initialPositionBackground = {
     x: 0,
     y: 0
+};
+
+const initialPositionBox = {
+    x: 0,
+    y: -250
 };
 
 export default function Canvas() {
     const [shape, setShape] = useImmer({
         color: 'orange',
-        position: initialPosition
+        position: initialPositionBox
     });
 
     // Buggy code causes the background to move
@@ -64,7 +69,7 @@ export default function Canvas() {
                 <option value="aliceblue">aliceblue</option>
             </select>
             <Background
-                position={initialPosition}
+                position={initialPositionBackground}
             />
             <Box
                 color={shape.color}
@@ -150,7 +155,7 @@ function Background({
                     }) {
     return (
         <div style={{
-            position: 'absolute',
+            // position: 'absolute',
             transform: `translate(
         ${position.x}px,
         ${position.y}px
