@@ -18,9 +18,7 @@ export default function Home() {
                 learning and experimentation tool.
             </p>
 
-            <p className="flex justify-items-start md:justify-center bg-gradient-to-b from-zinc-200 px-4 py-2 backdrop-blur-2xl rounded-xl border-1 bg-gray-500 hover:bg-gray-400 text-blue-700 text-sm font-bold">
-                <Link href={'/snippets'}> Click here to view sample apps </Link>
-            </p>
+            <a className="aButton" href={'/snippets'}> Click here to view sample apps </a>
 
             </div>
 
