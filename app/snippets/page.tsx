@@ -6,6 +6,7 @@ import Canvas from "./drag-box"
 import Link from "next/link";
 import TaskApp from "@/app/snippets/todo-app/ToDoApp";
 import FixDisappearingInput from "@/app/snippets/FixDisappearingInput";
+import ContactList from "@/app/snippets/FixMisplacedStateInList";
 
 export default async function Page() {
 
@@ -64,6 +65,15 @@ export default async function Page() {
                 </a>
                 <div className="">
                     <FixDisappearingInput/>
+                </div>
+            </div>
+
+            <div className="h-70 app-container">
+                <a href="https://react.dev/learn/preserving-and-resetting-state#fix-misplaced-state-in-the-list">
+                    Fix misplaced state in the list
+                </a>
+                <div className="">
+                    <ContactList/>
                 </div>
             </div>
 
