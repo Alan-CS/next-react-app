@@ -22,7 +22,7 @@ export default function ContactList() {
                 Show in reverse order
             </label>
             <ul>
-                {displayedContacts.map((contact, i) =>
+                {displayedContacts.map((contact) =>
                     // Using the contact ID as a key instead of the index fixes the issue
                     <li className="mt-2" key={contact.id}>
                         <Contact contact={contact} />

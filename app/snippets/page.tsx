@@ -3,12 +3,12 @@
 import {TWBeforeAfter} from "@/app/snippets/tw-before-after";
 import Scoreboard from "@/app/snippets/updating-objects-in-state";
 import Canvas from "./drag-box"
-import Link from "next/link";
+// import Link from "next/link";
 import TaskApp from "@/app/snippets/todo-app/ToDoApp";
 import FixDisappearingInput from "@/app/snippets/FixDisappearingInput";
 import ContactList from "@/app/snippets/FixMisplacedStateInList";
 
-export default async function Page() {
+export default function Page() {
 
     return (
         <main className="min-h-screen flex flex-col items-center">
