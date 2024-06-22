@@ -8,6 +8,7 @@ import TaskApp from "@/app/snippets/todo-app/ToDoApp";
 import FixDisappearingInput from "@/app/snippets/FixDisappearingInput";
 import ContactList from "@/app/snippets/FixMisplacedStateInList";
 import Messenger from "@/app/snippets/MessengerApp/MessengerApp";
+import ProfilePage from "@/app/snippets/ProfilePageApp/ProfilePageApp";
 
 export default function Page() {
 
@@ -84,6 +85,15 @@ export default function Page() {
                 </a>
                 <div className="">
                     <Messenger/>
+                </div>
+            </div>
+
+            <div className="h-70 app-container">
+                <a href="https://react.dev/learn/passing-data-deeply-with-context">
+                    React Docs Context based Profile Page App
+                </a>
+                <div className="">
+                    <ProfilePage/>
                 </div>
             </div>
 
