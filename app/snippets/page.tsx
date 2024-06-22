@@ -7,6 +7,7 @@ import Canvas from "./drag-box"
 import TaskApp from "@/app/snippets/todo-app/ToDoApp";
 import FixDisappearingInput from "@/app/snippets/FixDisappearingInput";
 import ContactList from "@/app/snippets/FixMisplacedStateInList";
+import Messenger from "@/app/snippets/MessengerApp/MessengerApp";
 
 export default function Page() {
 
@@ -74,6 +75,15 @@ export default function Page() {
                 </a>
                 <div className="">
                     <ContactList/>
+                </div>
+            </div>
+
+            <div className="h-70 app-container">
+                <a href="https://react.dev/learn/extracting-state-logic-into-a-reducer#restore-input-values-when-switching-between-tabs">
+                    React Docs Messenger App
+                </a>
+                <div className="">
+                    <Messenger/>
                 </div>
             </div>
 
