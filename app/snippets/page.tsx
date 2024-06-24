@@ -4,11 +4,12 @@ import {TWBeforeAfter} from "@/app/snippets/tw-before-after";
 import Scoreboard from "@/app/snippets/updating-objects-in-state";
 import Canvas from "./drag-box"
 // import Link from "next/link";
-import TaskApp from "@/app/snippets/todo-app/ToDoApp";
+import ToDoApp from "@/app/snippets/todo-app/ToDoApp";
 import FixDisappearingInput from "@/app/snippets/FixDisappearingInput";
 import ContactList from "@/app/snippets/FixMisplacedStateInList";
 import Messenger from "@/app/snippets/MessengerApp/MessengerApp";
 import ProfilePage from "@/app/snippets/ProfilePageApp/ProfilePageApp";
+import TaskApp from "@/app/snippets/task-app-with-reducer-and-context/TasksApp";
 
 export default function Page() {
 
@@ -57,7 +58,7 @@ export default function Page() {
                     React Docs ToDo App using Immer
                 </a>
                 <div>
-                    <TaskApp/>
+                    <ToDoApp/>
                 </div>
             </div>
 
@@ -94,6 +95,15 @@ export default function Page() {
                 </a>
                 <div className="">
                     <ProfilePage/>
+                </div>
+            </div>
+
+            <div className="h-70 app-container">
+                <a href="https://react.dev/learn/scaling-up-with-reducer-and-context">
+                    React Docs Tasks App With Reducer And Context
+                </a>
+                <div className="">
+                    <TaskApp/>
                 </div>
             </div>
 

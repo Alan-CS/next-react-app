@@ -12,7 +12,7 @@ const initialTodos = [
     { id: 2, title: 'Brew tea', done: false },
 ];
 
-export default function TaskApp() {
+export default function ToDoApp() {
     const [todos, setTodos] = useImmer(
         initialTodos
     );
