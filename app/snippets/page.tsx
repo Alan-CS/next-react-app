@@ -10,6 +10,7 @@ import ContactList from "@/app/snippets/FixMisplacedStateInList";
 import Messenger from "@/app/snippets/MessengerApp/MessengerApp";
 import ProfilePage from "@/app/snippets/ProfilePageApp/ProfilePageApp";
 import TaskApp from "@/app/snippets/task-app-with-reducer-and-context/TasksApp";
+import Clock from "@/app/snippets/Clock/ClockApp";
 
 export default function Page() {
 
@@ -104,6 +105,15 @@ export default function Page() {
                 </a>
                 <div className="">
                     <TaskApp/>
+                </div>
+            </div>
+
+            <div className="h-70 app-container">
+                <a href="https://react.dev/learn/referencing-values-with-refs">
+                    React Docs Clock App
+                </a>
+                <div className="">
+                    <Clock/>
                 </div>
             </div>
 
