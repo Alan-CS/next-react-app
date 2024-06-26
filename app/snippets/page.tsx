@@ -12,6 +12,7 @@ import ProfilePage from "@/app/snippets/ProfilePageApp/ProfilePageApp";
 import TaskApp from "@/app/snippets/task-app-with-reducer-and-context/TasksApp";
 import Clock from "@/app/snippets/Clock/ClockApp";
 import DebouncedButtons from "@/app/snippets/DebouncedButtons";
+import ReadState from "@/app/ReadingState";
 
 export default function Page() {
 
@@ -124,6 +125,15 @@ export default function Page() {
                 </a>
                 <div className="app-parent">
                     <DebouncedButtons/>
+                </div>
+            </div>
+
+            <div className="h-70 app-container">
+                <a href="https://react.dev/learn/referencing-values-with-refs#read-the-latest-state">
+                    React Docs Reading State asychronously
+                </a>
+                <div className="app-parent">
+                    <ReadState/>
                 </div>
             </div>
 
