@@ -11,6 +11,7 @@ import Messenger from "@/app/snippets/MessengerApp/MessengerApp";
 import ProfilePage from "@/app/snippets/ProfilePageApp/ProfilePageApp";
 import TaskApp from "@/app/snippets/task-app-with-reducer-and-context/TasksApp";
 import Clock from "@/app/snippets/Clock/ClockApp";
+import DebouncedButtons from "@/app/snippets/DebouncedButtons";
 
 export default function Page() {
 
@@ -114,6 +115,15 @@ export default function Page() {
                 </a>
                 <div className="app-parent">
                     <Clock/>
+                </div>
+            </div>
+
+            <div className="h-70 app-container">
+                <a href="https://react.dev/learn/referencing-values-with-refs#fix-debouncing">
+                    React Docs Debounced Buttons
+                </a>
+                <div className="app-parent">
+                    <DebouncedButtons/>
                 </div>
             </div>
 
