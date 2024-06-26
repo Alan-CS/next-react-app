@@ -48,12 +48,16 @@ body {
     @apply block px-4 py-2 mb-10 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl rounded-xl border-1 bg-gray-400 hover:bg-gray-500 text-blue-700 text-sm font-bold
   }
 
+ .app-parent {
+   @apply bg-orange-200 p-4 rounded-lg
+ }
+
   .h2 {
     @apply flex place-content-center p-2 mb-6
   }
 
   .h2 a {
-    @apply m-auto px-2 py-1 text-center bg-blue-100 hover:bg-blue-200 rounded-md
+    @apply m-auto px-2 py-1 text-center bg-blue-100 hover:bg-blue-200 rounded-lg
   }
 
   /*ALAN: Can also Define a border of 1px as below*/

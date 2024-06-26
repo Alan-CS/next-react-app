@@ -30,7 +30,7 @@ export default function Page() {
                 <a href="https://tailwindcss.com/docs/hover-focus-and-other-states#before-and-after">
                     Usage of before and after pseudoelements in Tailwind
                 </a>
-                <div>
+                <div className="app-parent">
                     <TWBeforeAfter/>
                 </div>
             </div>
@@ -39,7 +39,7 @@ export default function Page() {
                 <a href="https://react.dev/learn/updating-objects-in-state#fix-incorrect-state-updates">
                     React Docs Scorecard App
                 </a>
-                <div>
+                <div className="app-parent">
                     <Scoreboard/>
                 </div>
             </div>
@@ -49,7 +49,7 @@ export default function Page() {
                 <a href="https://react.dev/learn/updating-objects-in-state#find-and-fix-the-mutation">
                     React Docs draggable box on a static background
                 </a>
-                <div className="">
+                <div className="app-parent">
                     <Canvas/>
                 </div>
             </div>
@@ -58,7 +58,7 @@ export default function Page() {
                 <a href="https://react.dev/learn/updating-arrays-in-state#fix-the-mutations-using-immer">
                     React Docs ToDo App using Immer
                 </a>
-                <div>
+                <div className="app-parent">
                     <ToDoApp/>
                 </div>
             </div>
@@ -67,7 +67,7 @@ export default function Page() {
                 <a href="https://react.dev/learn/preserving-and-resetting-state#fix-disappearing-input-text">
                     Fix disappearing input text
                 </a>
-                <div className="">
+                <div className="app-parent">
                     <FixDisappearingInput/>
                 </div>
             </div>
@@ -76,7 +76,7 @@ export default function Page() {
                 <a href="https://react.dev/learn/preserving-and-resetting-state#fix-misplaced-state-in-the-list">
                     Fix misplaced state in the list
                 </a>
-                <div className="">
+                <div className="app-parent">
                     <ContactList/>
                 </div>
             </div>
@@ -85,7 +85,7 @@ export default function Page() {
                 <a href="https://react.dev/learn/extracting-state-logic-into-a-reducer#restore-input-values-when-switching-between-tabs">
                     React Docs Messenger App
                 </a>
-                <div className="">
+                <div className="app-parent">
                     <Messenger/>
                 </div>
             </div>
@@ -94,7 +94,7 @@ export default function Page() {
                 <a href="https://react.dev/learn/passing-data-deeply-with-context">
                     React Docs Context based Profile Page App
                 </a>
-                <div className="">
+                <div className="app-parent">
                     <ProfilePage/>
                 </div>
             </div>
@@ -103,7 +103,7 @@ export default function Page() {
                 <a href="https://react.dev/learn/scaling-up-with-reducer-and-context">
                     React Docs Tasks App With Reducer And Context
                 </a>
-                <div className="">
+                <div className="app-parent">
                     <TaskApp/>
                 </div>
             </div>
@@ -112,7 +112,7 @@ export default function Page() {
                 <a href="https://react.dev/learn/referencing-values-with-refs">
                     React Docs Clock App
                 </a>
-                <div className="">
+                <div className="app-parent">
                     <Clock/>
                 </div>
             </div>
