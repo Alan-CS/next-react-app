@@ -14,6 +14,7 @@ import Clock from "@/app/snippets/Clock/ClockApp";
 import DebouncedButtons from "@/app/snippets/DebouncedButtons";
 import ReadState from "@/app/ReadingState";
 import ScrollingImages from "@/app/snippets/ScrollingImages/ScrollingImages";
+import ScrollingImagesFlushSync from "@/app/snippets/ScrollingImages/ScrollingImagesFlushSync";
 
 export default function Page() {
 
@@ -145,6 +146,15 @@ export default function Page() {
                 </a>
                 <div className="app-parent">
                     <ScrollingImages/>
+                </div>
+            </div>
+
+            <div className="app-container">
+                <a href="https://react.dev/learn/manipulating-the-dom-with-refs#scrolling-an-image-carousel">
+                    React Docs Scrolling Images With Multiple Buttons Using FlushSync
+                </a>
+                <div className="app-parent">
+                    <ScrollingImagesFlushSync/>
                 </div>
             </div>
 
