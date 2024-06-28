@@ -1,92 +1,89 @@
-// See: https://react.dev/learn/manipulating-the-dom-with-refs#how-to-manage-a-list-of-refs-using-a-ref-callback
-
-import { useRef, useState } from "react";
+import {useRef, useState} from "react";
 import './styles.css';
 
-export default function ScrollingImages() {
-    const [index, setIndex] = useState(0);
-    const itemsRef = useRef(null);
+type Img = {
+    id: number;
+    imageUrl: string;
+};
 
-    function scrollToImage(imgId:number) {
+type ImgList = Img[];
+
+const ScrollingImages: React.FC = () => {
+    const [index, setIndex] = useState<number>(0);
+    const itemsRef = useRef<Map<number, HTMLLIElement> | null>(null);
+
+    const scrollToImage = (imgId: number): void => {
         const map = getMap();
         const node = map.get(imgId);
-        node.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "center",
-        });
-    }
+        if (node) {
+            node.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "center",
+            });
+        }
+    };
 
-    function getMap() {
+    const getMap = (): Map<number, HTMLLIElement> => {
         if (!itemsRef.current) {
             // Initialize the Map on first usage.
             itemsRef.current = new Map();
         }
         return itemsRef.current;
-    }
+    };
 
-    function handleNextButtonClick() {
+    const handleNextButtonClick = (): void => {
         if (index < imgList.length - 1) {
             setIndex(index + 1);
-            scrollToImage(imgList[index + 1].id)
+            scrollToImage(imgList[index + 1].id);
         } else {
             setIndex(0);
-            scrollToImage(imgList[0].id)
+            scrollToImage(imgList[0].id);
         }
-    }
+    };
 
-    function handleLastButtonClick() {
+    const handleLastButtonClick = (): void => {
         setIndex(imgList.length - 1);
-        scrollToImage(imgList[imgList.length - 1].id)
-    }
+        scrollToImage(imgList[imgList.length - 1].id);
+    };
 
-    function handleFirstButtonClick() {
+    const handleFirstButtonClick = (): void => {
         setIndex(0);
-        scrollToImage(imgList[0].id)
-    }
+        scrollToImage(imgList[0].id);
+    };
 
     return (
         <>
             <nav className="flex justify-around">
-                <button className="btn-primary-block"
-                        onClick={handleFirstButtonClick}
-                >
+                <button className="btn-primary-block" onClick={handleFirstButtonClick}>
                     First Image
                 </button>
-                <button className="btn-primary-block"
-                        onClick={handleNextButtonClick}
-                >
+                <button className="btn-primary-block" onClick={handleNextButtonClick}>
                     Next
                 </button>
-                <button className="btn-primary-block"
-                        onClick={handleLastButtonClick}
-                >
+                <button className="btn-primary-block" onClick={handleLastButtonClick}>
                     Last Image
                 </button>
             </nav>
             <div className="imgParent">
                 <ul>
-                    {imgList.map((img, i) => (
+                    {imgList.map((img: Img, i: number) => (
                         <li
                             className="imgLi"
                             key={img.id}
                             ref={(node) => {
-                            const map = getMap();
-                            if (node) {
-                                map.set(img.id, node);
-                            } else {
-                                map.delete(img.id);
-                            }
-                        }}
+                                const map = getMap();
+                                if (node) {
+                                    map.set(img.id, node);
+                                } else {
+                                    map.delete(img.id);
+                                }
+                            }}
                         >
                             <img
-                                className={
-                                    index === i ?
-                                        'active' :
-                                        ''
-                                }
+                                className={index === i ? 'active' : ''}
                                 src={img.imageUrl}
-                                alt={'img #' + img.id}
+                                alt={`img #${img.id}`}
                             />
                         </li>
                     ))}
@@ -94,14 +91,15 @@ export default function ScrollingImages() {
             </div>
         </>
     );
-}
+};
 
 // ALAN: Used loremflickr for images
-const imgList:ImgList  = [];
+const imgList: ImgList = [];
 for (let i = 0; i < 10; i++) {
     imgList.push({
         id: i,
-        imageUrl: 'https://loremflickr.com/100/100/' + i
+        imageUrl: `https://loremflickr.com/100/100/${i}`,
     });
 }
 
+export default ScrollingImages;
