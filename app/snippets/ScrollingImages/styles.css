@@ -1,0 +1,23 @@
+/*https://www.geeksforgeeks.org/make-a-div-horizontally-scrollable-using-css/*/
+.imgParent {
+    padding: 2rem;
+    width: 300px;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.imgLi {
+    list-style: none;
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+img {
+    padding: 10px; /* Helps put a border around the image using the .active class */
+    margin: -10px; /* Helps decrease size of images and move them closer */
+    transition: background 0.2s linear;
+}
+
+.active {
+    background: rgba(0, 100, 150, 0.4);
+}

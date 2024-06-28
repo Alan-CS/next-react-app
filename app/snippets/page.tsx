@@ -13,6 +13,7 @@ import TaskApp from "@/app/snippets/task-app-with-reducer-and-context/TasksApp";
 import Clock from "@/app/snippets/Clock/ClockApp";
 import DebouncedButtons from "@/app/snippets/DebouncedButtons";
 import ReadState from "@/app/ReadingState";
+import ScrollingImages from "@/app/snippets/ScrollingImages/ScrollingImages";
 
 export default function Page() {
 
@@ -47,7 +48,7 @@ export default function Page() {
             </div>
 
             {/*ALAN: Give this a height of h-96 otherwise content below it will overlap*/}
-            <div className="h-70 app-container">
+            <div className="app-container">
                 <a href="https://react.dev/learn/updating-objects-in-state#find-and-fix-the-mutation">
                     React Docs draggable box on a static background
                 </a>
@@ -56,7 +57,7 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="h-70 app-container">
+            <div className="app-container">
                 <a href="https://react.dev/learn/updating-arrays-in-state#fix-the-mutations-using-immer">
                     React Docs ToDo App using Immer
                 </a>
@@ -65,7 +66,7 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="h-70 app-container">
+            <div className="app-container">
                 <a href="https://react.dev/learn/preserving-and-resetting-state#fix-disappearing-input-text">
                     Fix disappearing input text
                 </a>
@@ -74,7 +75,7 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="h-70 app-container">
+            <div className="app-container">
                 <a href="https://react.dev/learn/preserving-and-resetting-state#fix-misplaced-state-in-the-list">
                     Fix misplaced state in the list
                 </a>
@@ -83,7 +84,7 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="h-70 app-container">
+            <div className="app-container">
                 <a href="https://react.dev/learn/extracting-state-logic-into-a-reducer#restore-input-values-when-switching-between-tabs">
                     React Docs Messenger App
                 </a>
@@ -92,7 +93,7 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="h-70 app-container">
+            <div className="app-container">
                 <a href="https://react.dev/learn/passing-data-deeply-with-context">
                     React Docs Context based Profile Page App
                 </a>
@@ -101,7 +102,7 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="h-70 app-container">
+            <div className="app-container">
                 <a href="https://react.dev/learn/scaling-up-with-reducer-and-context">
                     React Docs Tasks App With Reducer And Context
                 </a>
@@ -110,7 +111,7 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="h-70 app-container">
+            <div className="app-container">
                 <a href="https://react.dev/learn/referencing-values-with-refs">
                     React Docs Clock App
                 </a>
@@ -119,7 +120,7 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="h-70 app-container">
+            <div className="app-container">
                 <a href="https://react.dev/learn/referencing-values-with-refs#fix-debouncing">
                     React Docs Debounced Buttons
                 </a>
@@ -128,12 +129,22 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="h-70 app-container">
+            <div className="app-container">
                 <a href="https://react.dev/learn/referencing-values-with-refs#read-the-latest-state">
                     React Docs Reading State asychronously
                 </a>
                 <div className="app-parent">
                     <ReadState/>
+                </div>
+            </div>
+
+            {/*Get hydration message that html should not be inside body at random when page is refreshed after putting below code. But console shows error in the updating-objects-in-state.tsx that div is inside label however there is no such nesting. Also, per SOF, hydration messages are usually because of improper jsx nesting.*/}
+            <div className="app-container">
+                <a href="https://react.dev/learn/manipulating-the-dom-with-refs#how-to-manage-a-list-of-refs-using-a-ref-callback">
+                    React Docs Scrolling Images With Multiple Buttons
+                </a>
+                <div className="app-parent">
+                    <ScrollingImages/>
                 </div>
             </div>
 
