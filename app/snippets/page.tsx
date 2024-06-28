@@ -15,6 +15,7 @@ import DebouncedButtons from "@/app/snippets/DebouncedButtons";
 import ReadState from "@/app/ReadingState";
 import ScrollingImages from "@/app/snippets/ScrollingImages/ScrollingImages";
 import ScrollingImagesFlushSync from "@/app/snippets/ScrollingImages/ScrollingImagesFlushSync";
+import FocusingInput from "@/app/snippets/FocusingInput/FocusingInput";
 
 export default function Page() {
 
@@ -155,6 +156,15 @@ export default function Page() {
                 </a>
                 <div className="app-parent">
                     <ScrollingImagesFlushSync/>
+                </div>
+            </div>
+
+            <div className="app-container">
+                <a href="https://react.dev/learn/manipulating-the-dom-with-refs#focus-the-search-field-with-separate-components">
+                    React Docs Focusing Input Using Refs
+                </a>
+                <div className="app-parent">
+                    <FocusingInput/>
                 </div>
             </div>
 
