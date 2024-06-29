@@ -1,7 +1,7 @@
 // https://react.dev/learn/manipulating-the-dom-with-refs#focus-the-search-field-with-separate-components
 // https://react.dev/learn/manipulating-the-dom-with-refs#accessing-another-components-dom-nodes
 
-import {useRef} from "react";
+import React, {useRef} from "react";
 import SearchButton from "./SearchButton";
 import { SearchInput, ImperativeSearchInput } from "./SearchInput";
 
