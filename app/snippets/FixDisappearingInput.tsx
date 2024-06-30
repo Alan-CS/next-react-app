@@ -1,10 +1,10 @@
-
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export default function FixDisappearingInput() {
     const [showHint, setShowHint] = useState(false);
 
-    // ALAN: Buggy code
+    // ALAN: Buggy code because Form component is rendered in different spots
+    // and hence loses it's state
     // if (showHint) {
     //     return (
     //         <div>
@@ -27,18 +27,24 @@ export default function FixDisappearingInput() {
 
     return (
         <div>
-            {showHint &&
+            {showHint && (
                 <p className="mb-2"><i>Hint: Your favorite city?</i></p>
-            }
+            )}
             <Form />
             {showHint ? (
-                <button className="btn-primary-block mt-2" onClick={() => {
-                    setShowHint(false);
-                }}>Hide hint</button>
+                <button
+                    className="btn-primary-block mt-2"
+                    onClick={() => setShowHint(false)}
+                >
+                    Hide hint
+                </button>
             ) : (
-                <button className="btn-primary-block mt-2" onClick={() => {
-                    setShowHint(true);
-                }}>Show hint</button>
+                <button
+                    className="btn-primary-block mt-2"
+                    onClick={() => setShowHint(true)}
+                >
+                    Show hint
+                </button>
             )}
         </div>
     );
@@ -46,12 +52,13 @@ export default function FixDisappearingInput() {
 
 function Form() {
     const [text, setText] = useState('');
+
     return (
         <textarea
             className="border-1"
-            rows="1"
+            rows={1}
             value={text}
-            onChange={e => setText(e.target.value)}
+            onChange={(e) => setText(e.target.value)}
         />
     );
 }
