@@ -2,7 +2,7 @@
 
 import {TWBeforeAfter} from "@/app/snippets/tw-before-after";
 import Scoreboard from "@/app/snippets/updating-objects-in-state";
-import Canvas from "./drag-box"
+import Canvas from "@/app/snippets/DragBox/Canvas"
 // import Link from "next/link";
 import ToDoApp from "@/app/snippets/todo-app/ToDoApp";
 import FixDisappearingInput from "@/app/snippets/FixDisappearingInput";
