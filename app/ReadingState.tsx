@@ -1,12 +1,12 @@
 // ALAN: Taken from https://react.dev/learn/referencing-values-with-refs#read-the-latest-state
 
-import { useState, useRef } from 'react';
+import { useState, useRef, ChangeEvent } from 'react';
 
 export default function ReadState() {
     const [text, setText] = useState('');
     const textRef = useRef(text);
 
-    function handleChange(e) {
+    function handleChange(e: ChangeEvent<HTMLInputElement>) {
         setText(e.target.value);
         textRef.current = e.target.value;
     }
@@ -24,8 +24,7 @@ export default function ReadState() {
                 value={text}
                 onChange={handleChange}
             />
-            <button className="btn-primary"
-                onClick={handleSend}>
+            <button className="btn-primary" onClick={handleSend}>
                 Send
             </button>
         </>
