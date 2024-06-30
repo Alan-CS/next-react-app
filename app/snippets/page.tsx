@@ -5,8 +5,7 @@ import Scoreboard from "@/app/snippets/updating-objects-in-state";
 import Canvas from "@/app/snippets/DragBox/Canvas"
 // import Link from "next/link";
 import ToDoApp from "@/app/snippets/todo-app/ToDoApp";
-import FixDisappearingInput from "@/app/snippets/FixDisappearingInput";
-import ContactList from "@/app/snippets/FixMisplacedStateInList";
+import ContactList from "@/app/snippets/FixMisplacedStateInList/ContactList";
 import Messenger from "@/app/snippets/MessengerApp/MessengerApp";
 import ProfilePage from "@/app/snippets/ProfilePageApp/ProfilePageApp";
 import TaskApp from "@/app/snippets/task-app-with-reducer-and-context/TasksApp";
@@ -16,6 +15,7 @@ import ReadState from "@/app/ReadingState";
 import ScrollingImages from "@/app/snippets/ScrollingImages/ScrollingImages";
 import ScrollingImagesFlushSync from "@/app/snippets/ScrollingImages/ScrollingImagesFlushSync";
 import FocusingInput from "@/app/snippets/FocusingInput/FocusingInput";
+import FixDisappearingInput from "@/app/snippets/FixDisappearingInput";
 
 export default function Page() {
 
