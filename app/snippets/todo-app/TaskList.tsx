@@ -1,10 +1,19 @@
-import {useState} from 'react';
+import React, { useState } from 'react';
+import {Todo} from "@/app/snippets/todo-app/ToDoApp";
 
-export default function TaskList({
-                                     todos,
-                                     onChangeTodo,
-                                     onDeleteTodo
-                                 }) {
+interface TaskProps {
+    todo: Todo;
+    onChange: (updatedTodo: Todo) => void;
+    onDelete: (id: number) => void;
+}
+
+interface TaskListProps {
+    todos: Todo[];
+    onChangeTodo: (updatedTodo: Todo) => void;
+    onDeleteTodo: (id: number) => void;
+}
+
+const TaskList: React.FC<TaskListProps> = ({ todos, onChangeTodo, onDeleteTodo }) => {
     return (
         <ul>
             {todos.map(todo => (
@@ -18,22 +27,25 @@ export default function TaskList({
             ))}
         </ul>
     );
-}
+};
 
-function Task({todo, onChange, onDelete}) {
+const Task: React.FC<TaskProps> = ({ todo, onChange, onDelete }) => {
     const [isEditing, setIsEditing] = useState(false);
     let todoContent;
+
     if (isEditing) {
         todoContent = (
             <>
-                <input className="border-1"
+                <input
+                    className="border-1"
                     value={todo.title}
-                    onChange={e => {
+                    onChange={(e) => {
                         onChange({
                             ...todo,
                             title: e.target.value
                         });
-                    }}/>
+                    }}
+                />
                 <button className="btn-primary" onClick={() => setIsEditing(false)}>
                     Save
                 </button>
@@ -49,12 +61,14 @@ function Task({todo, onChange, onDelete}) {
             </>
         );
     }
+
     return (
-        <label >
-            <input className="mr-2"
+        <label>
+            <input
+                className="mr-2"
                 type="checkbox"
                 checked={todo.done}
-                onChange={e => {
+                onChange={(e) => {
                     onChange({
                         ...todo,
                         done: e.target.checked
@@ -67,4 +81,6 @@ function Task({todo, onChange, onDelete}) {
             </button>
         </label>
     );
-}
+};
+
+export default TaskList;
