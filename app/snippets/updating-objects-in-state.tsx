@@ -1,9 +1,15 @@
-import {useState} from 'react';
-
 // https://react.dev/learn/updating-objects-in-state
 
+import React, { useState, ChangeEvent } from 'react';
+
+interface Player {
+    firstName: string;
+    lastName: string;
+    score: number;
+}
+
 export default function Scoreboard() {
-    const [player, setPlayer] = useState({
+    const [player, setPlayer] = useState<Player>({
         firstName: 'Ranjani',
         lastName: 'Shettar',
         score: 10,
@@ -16,29 +22,25 @@ export default function Scoreboard() {
         });
     }
 
-    function handleFirstNameChange(e) {
+    function handleFirstNameChange(e: ChangeEvent<HTMLInputElement>) {
         setPlayer({
             ...player,
             firstName: e.target.value,
         });
     }
 
-    function handleLastNameChange(e) {
+    function handleLastNameChange(e: ChangeEvent<HTMLInputElement>) {
         setPlayer({
             ...player,
-            lastName: e.target.value
+            lastName: e.target.value,
         });
     }
-
-    // ALAN: The entire label acts as a button if you nest the button inside the label.
-    // So I put it outside the label to fix the issue.
 
     return (
         <>
             <div className="mb-2">
                 <label>
                     Score: <b>{player.score}</b>
-                    {' '}
                 </label>
                 <button className="btn-primary" onClick={handlePlusClick}>
                     +1
@@ -47,7 +49,8 @@ export default function Scoreboard() {
 
             <label className="block mb-2">
                 First name:
-                <input className="ml-2"
+                <input
+                    className="ml-2"
                     value={player.firstName}
                     onChange={handleFirstNameChange}
                 />
@@ -55,7 +58,8 @@ export default function Scoreboard() {
 
             <label className="block mb-2">
                 Last name:
-                <input className="ml-2"
+                <input
+                    className="ml-2"
                     value={player.lastName}
                     onChange={handleLastNameChange}
                 />
