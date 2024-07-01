@@ -1,7 +1,13 @@
+import React from 'react';
 import Heading from './Heading';
 import Section from './Section';
 
-export default function ProfilePage() {
+interface PostProps {
+    title: string;
+    body: string;
+}
+
+const ProfilePage: React.FC = () => {
     return (
         <Section>
             <Heading>My Profile</Heading>
@@ -12,18 +18,18 @@ export default function ProfilePage() {
             <AllPosts />
         </Section>
     );
-}
+};
 
-function AllPosts() {
+const AllPosts: React.FC = () => {
     return (
         <Section>
             <Heading>Posts</Heading>
             <RecentPosts />
         </Section>
     );
-}
+};
 
-function RecentPosts() {
+const RecentPosts: React.FC = () => {
     return (
         <Section>
             <Heading>Recent Posts</Heading>
@@ -37,15 +43,15 @@ function RecentPosts() {
             />
         </Section>
     );
-}
+};
 
-function Post({ title, body }) {
+const Post: React.FC<PostProps> = ({ title, body }) => {
     return (
         <Section isFancy={true}>
-            <Heading>
-                {title}
-            </Heading>
+            <Heading>{title}</Heading>
             <p><i>{body}</i></p>
         </Section>
     );
-}
+};
+
+export default ProfilePage;

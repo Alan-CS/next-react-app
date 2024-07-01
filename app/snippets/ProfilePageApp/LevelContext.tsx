@@ -1,3 +1,8 @@
 import { createContext } from 'react';
 
-export const LevelContext = createContext(0);
+// Define the type for the context value
+type LevelContextType = number;
+
+// Create the context with a default value of 0
+export const LevelContext = createContext<LevelContextType>(0);
+

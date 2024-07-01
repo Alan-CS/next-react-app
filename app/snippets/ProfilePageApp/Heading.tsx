@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext, ReactNode } from 'react';
 import { LevelContext } from './LevelContext';
 
 // ALAN: Don't import as below since then you will get the error
@@ -7,8 +7,13 @@ import { LevelContext } from './LevelContext';
 // contain at least one local class or id)
 // import styles from './styles.module.css'
 
-export default function Heading({ children }) {
+interface HeadingProps {
+    children: ReactNode;
+}
+
+export default function Heading({ children }: HeadingProps) {
     const level = useContext(LevelContext);
+
     switch (level) {
         case 0:
             throw Error('Heading must be inside a Section!');
