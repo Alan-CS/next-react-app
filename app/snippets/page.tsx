@@ -1,7 +1,7 @@
 "use client"
 
 import {TWBeforeAfter} from "@/app/snippets/TailwindCSS/tw-before-after";
-import Scoreboard from "@/app/snippets/updating-objects-in-state/updating-objects-in-state";
+// import Scoreboard from "@/app/snippets/updating-objects-in-state/updating-objects-in-state";
 import Canvas from "@/app/snippets/DragBox/Canvas"
 // import Link from "next/link";
 import ToDoApp from "@/app/snippets/todo-app/ToDoApp";
@@ -40,14 +40,15 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="h-48 app-container">
-                <a href="https://react.dev/learn/updating-objects-in-state#fix-incorrect-state-updates">
-                    React Docs Scorecard App
-                </a>
-                <div className="app-parent">
-                    <Scoreboard/>
-                </div>
-            </div>
+            {/*Commented out below as it seems to cause Hydration Error after the images scrolling app was implemented*/}
+            {/*<div className="h-48 app-container">*/}
+            {/*    <a href="https://react.dev/learn/updating-objects-in-state#fix-incorrect-state-updates">*/}
+            {/*        React Docs Scorecard App*/}
+            {/*    </a>*/}
+            {/*    <div className="app-parent">*/}
+            {/*        <Scoreboard/>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
 
             {/*ALAN: Give this a height of h-96 otherwise content below it will overlap*/}
             <div className="app-container">
