@@ -1,8 +1,8 @@
-import {useState} from 'react';
-import {useTasksDispatch} from './TasksContext';
+import React, { useState } from 'react';
+import { useTasksDispatch } from './TasksContext';
 
 export default function AddTask() {
-    const [text, setText] = useState('');
+    const [text, setText] = useState<string>('');
     const dispatch = useTasksDispatch();
 
     const isButtonDisabled = text.length === 0;
@@ -13,7 +13,7 @@ export default function AddTask() {
             <input className="border-1"
                    placeholder="Add task"
                    value={text}
-                   onChange={e => setText(e.target.value)}
+                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setText(e.target.value)}
             />
             <button className={className}
                     disabled={isButtonDisabled}

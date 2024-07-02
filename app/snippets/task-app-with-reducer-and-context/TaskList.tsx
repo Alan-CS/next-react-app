@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useTasks, useTasksDispatch } from './TasksContext';
+import { TaskType } from './TasksContext';
 
 export default function TaskList() {
     const tasks = useTasks();
@@ -14,16 +15,22 @@ export default function TaskList() {
     );
 }
 
-function Task({ task }) {
+interface TaskProps {
+    task: TaskType;
+}
+
+const Task: React.FC<TaskProps> = ({ task }) => {
     const [isEditing, setIsEditing] = useState(false);
     const dispatch = useTasksDispatch();
     let taskContent;
+
     if (isEditing) {
         taskContent = (
             <>
-                <input className="border-1"
+                <input
+                    className="border-1"
                     value={task.text}
-                    onChange={e => {
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                         dispatch({
                             type: 'changed',
                             task: {
@@ -31,7 +38,8 @@ function Task({ task }) {
                                 text: e.target.value
                             }
                         });
-                    }} />
+                    }}
+                />
                 <button className="btn-primary" onClick={() => setIsEditing(false)}>
                     Save
                 </button>
@@ -47,12 +55,14 @@ function Task({ task }) {
             </>
         );
     }
+
     return (
         <label>
-            <input className="mr-2"
+            <input
+                className="mr-2"
                 type="checkbox"
                 checked={task.done}
-                onChange={e => {
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                     dispatch({
                         type: 'changed',
                         task: {
@@ -63,14 +73,18 @@ function Task({ task }) {
                 }}
             />
             {taskContent}
-            <button className="btn-primary" onClick={() => {
-                dispatch({
-                    type: 'deleted',
-                    id: task.id
-                });
-            }}>
+            <button
+                className="btn-primary"
+                onClick={() => {
+                    dispatch({
+                        type: 'deleted',
+                        id: task.id
+                    });
+                }}
+            >
                 Delete
             </button>
         </label>
     );
-}
+};
+
