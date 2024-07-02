@@ -1,6 +1,5 @@
 "use client"
 
-import {TWBeforeAfter} from "@/app/snippets/TailwindCSS/tw-before-after";
 // import Scoreboard from "@/app/snippets/updating-objects-in-state/updating-objects-in-state";
 import Canvas from "@/app/snippets/DragBox/Canvas"
 // import Link from "next/link";
@@ -30,15 +29,6 @@ export default function Page() {
                     </div>
                 </div>
             </a>
-
-            <div className="h-48 app-container">
-                <a href="https://tailwindcss.com/docs/hover-focus-and-other-states#before-and-after">
-                    Usage of before and after pseudoelements in Tailwind
-                </a>
-                <div className="app-parent">
-                    <TWBeforeAfter/>
-                </div>
-            </div>
 
             {/*Commented out below as it seems to cause Hydration Error after the images scrolling app was implemented*/}
             {/*<div className="h-48 app-container">*/}

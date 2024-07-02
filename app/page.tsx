@@ -1,4 +1,3 @@
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -7,7 +6,8 @@ export default function Home() {
       {/*ALAN: Implementing the gradiant using before and after elements is similar to the following : https://tailwindcss.com/docs/hover-focus-and-other-states#before-and-after*/}
         <div className="flex flex-col w-full place-items-center align-top">
 
-            <div className="flex flex-col w-full place-items-center h-18 text-2xl font-extrabold text-blue-800 italic text-center bg-blue-400 p-4 bg-gradient-to-b from-zinc-200">
+            <div
+                className="flex flex-col w-full place-items-center h-18 text-2xl font-extrabold text-blue-800 italic text-center bg-blue-400 p-4 bg-gradient-to-b from-zinc-200">
                 A Sample NextJS based Learning Tool
             </div>
 
@@ -18,10 +18,12 @@ export default function Home() {
                 learning and experimentation tool.
             </p>
 
-            <a className="aButton" href={'/snippets'}> Click here to view sample apps </a>
+            <a className="aButton" href={'/snippets'}> Click here to view sample React apps </a>
 
-            </div>
+            <a className="aButton" href={'/css'}> Click here to view sample Tailwind samples </a>
+
+        </div>
 
     </main>
-);
+  );
 }

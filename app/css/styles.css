@@ -1,0 +1,9 @@
+.gray {
+    flex: 1 0 30%;
+    width: 50px;
+    height: 20px;
+}
+
+.gray100 {
+    background: var(--color-gray-100);
+}
