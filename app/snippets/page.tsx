@@ -1,7 +1,7 @@
 "use client"
 
-import {TWBeforeAfter} from "@/app/snippets/tw-before-after";
-import Scoreboard from "@/app/snippets/updating-objects-in-state";
+import {TWBeforeAfter} from "@/app/snippets/TailwindCSS/tw-before-after";
+import Scoreboard from "@/app/snippets/updating-objects-in-state/updating-objects-in-state";
 import Canvas from "@/app/snippets/DragBox/Canvas"
 // import Link from "next/link";
 import ToDoApp from "@/app/snippets/todo-app/ToDoApp";
@@ -10,12 +10,12 @@ import Messenger from "@/app/snippets/MessengerApp/MessengerApp";
 import ProfilePage from "@/app/snippets/ProfilePageApp/ProfilePageApp";
 import TaskApp from "@/app/snippets/task-app-with-reducer-and-context/TasksApp";
 import Clock from "@/app/snippets/Clock/ClockApp";
-import DebouncedButtons from "@/app/snippets/DebouncedButtons";
-import ReadState from "@/app/ReadingState";
+import DebouncedButtons from "@/app/snippets/DebouncedButtons/DebouncedButtons";
+import ReadState from "@/app/snippets/ReadingState/ReadingState";
 import ScrollingImages from "@/app/snippets/ScrollingImages/ScrollingImages";
 import ScrollingImagesFlushSync from "@/app/snippets/ScrollingImages/ScrollingImagesFlushSync";
 import FocusingInput from "@/app/snippets/FocusingInput/FocusingInput";
-import FixDisappearingInput from "@/app/snippets/FixDisappearingInput";
+import FixDisappearingInput from "@/app/snippets/FixDisappearingInput/FixDisappearingInput";
 
 export default function Page() {
 
