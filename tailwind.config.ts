@@ -31,11 +31,15 @@ const config: Config = {
     },
   },
   plugins: [
+    // @ts-ignore
     function({ addBase, theme }) {
-      function extractColorVars(colorObj, colorGroup = '') {
+
+    // @ts-ignore
+    function extractColorVars(colorObj, colorGroup = '') {
         return Object.keys(colorObj).reduce((vars, colorKey) => {
           const value = colorObj[colorKey];
 
+          // @ts-ignore
           const newVars =
               typeof value === 'string'
                   ? { [`--color${colorGroup}-${colorKey}`]: value }
