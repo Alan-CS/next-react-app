@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). The project uses[`Typescript`](https://www.typescriptlang.org/) and [`Tailwind`](https://tailwindui.com/).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). The project uses[`Typescript`](https://www.typescriptlang.org/) and [`Tailwind CSS`](https://tailwindui.com/).
 
 ## Getting Started
 
@@ -22,4 +22,4 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## See the Live App on Vercel at the URL below
 
-- [Live URL](https://next-react-app-plum.vercel.app/) - learn about Next.js features and API.
+- [Live URL](https://next-react-app-plum.vercel.app/)
