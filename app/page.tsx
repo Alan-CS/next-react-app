@@ -1,32 +1,33 @@
+"use client"
+
 import Header from "@/app/components/Header";
 import Carousel from "@/app/components/Carousel";
+import {useEffect} from "react";
 
 export default function Home() {
+
+    // TODO: See how to do this in server rendered component as previously this was a
+    // server rendered component and had to change it to client when adding useEffect
+    // https://stackoverflow.com/questions/69074227/how-to-add-custom-class-to-body-element-for-some-routes-nexjts
+    useEffect(() => {
+        const body = document.querySelector("body");
+        const className = "overflow-hidden";
+        if (body) {
+            if(!body.classList.contains(className)) {
+                body.classList.add(className);
+            }
+        }
+        return () => {
+            if (body) {
+                body.classList.remove(className)
+            }
+        }
+    }, []);
+
   return (
-      <>
+      <div>
             <Header/>
-            {/*<main className="flex flex-col min-h-screen w-full items-center">*/}
-
-      {/*ALAN: Implementing the gradiant using before and after elements is similar to the following : https://tailwindcss.com/docs/hover-focus-and-other-states#before-and-after*/}
-      {/*  <div className="flex flex-col w-full place-items-center align-top">*/}
-      {/*  </div>*/}
-
-      {/*      </main>*/}
-
-            {/*<p className="w-1/2 my-16">*/}
-            {/*    An App that has been created to host various learning apps and code snippets from the react docs or*/}
-            {/*    from other sources*/}
-            {/*    such as Tailwind CSS etc. A developer interested in React centered technologies can use it as a*/}
-            {/*    learning and experimentation tool.*/}
-            {/*</p>*/}
-
-            {/*<a className="aButton" href={'/snippets'}> Click here to view sample React apps </a>*/}
-
-            {/*<a className="aButton" href={'/css'}> Click here to view sample Tailwind samples </a>*/}
-
             <Carousel/>
-
-
-      </>
+      </div>
   );
 }
