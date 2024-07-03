@@ -43,7 +43,7 @@ const Carousel: React.FC = () => {
                                         <span className="block text-white text-xl md:text-3xl">React examples from Docs and other sources but using Typescript and Tailwind</span>
                                         <div className="mt-5">
                                             <a className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl bg-white border border-transparent text-black hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
-                                               href="#">
+                                               href="/snippets">
                                                 View Samples
                                             </a>
                                         </div>
