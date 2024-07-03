@@ -15,20 +15,14 @@ import ScrollingImages from "@/app/snippets/ScrollingImages/ScrollingImages";
 import ScrollingImagesFlushSync from "@/app/snippets/ScrollingImages/ScrollingImagesFlushSync";
 import FocusingInput from "@/app/snippets/FocusingInput/FocusingInput";
 import FixDisappearingInput from "@/app/snippets/FixDisappearingInput/FixDisappearingInput";
+import Header from "@/app/components/Header";
 
 export default function Page() {
 
     return (
-        <main className="min-h-screen flex flex-col items-center">
-
-            <a className="group" href={'/'}>
-                <div className="group flex w-full place-items-center -mb-10">
-                    <div
-                        className="grow text-sm text-center bg-blue-400 p-4 hover:bg-blue-300 bg-gradient-to-b from-zinc-200 italic">
-                        <span className="text-md"> Go Back Home </span>
-                    </div>
-                </div>
-            </a>
+        <>
+            <Header/>
+            <main className="min-h-screen flex flex-col items-center">
 
             {/*Commented out below as it seems to cause Hydration Error after the images scrolling app was implemented*/}
             {/*<div className="h-48 app-container">*/}
@@ -160,5 +154,6 @@ export default function Page() {
             </div>
 
         </main>
+        </>
     );
 }
