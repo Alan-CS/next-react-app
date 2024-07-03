@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). The project uses[`Typescript`](https://www.typescriptlang.org/) and [`Tailwind`](https://tailwindui.com/).
 
 ## Getting Started
 
@@ -20,8 +20,6 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## See the Live App at the URL below
-
-To learn more about Next.js, take a look at the following resources:
+## See the Live App on Vercel at the URL below
 
 - [Live URL](https://next-react-app-plum.vercel.app/) - learn about Next.js features and API.
