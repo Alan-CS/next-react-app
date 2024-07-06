@@ -15,14 +15,11 @@ import ScrollingImages from "@/app/snippets/ScrollingImages/ScrollingImages";
 import ScrollingImagesFlushSync from "@/app/snippets/ScrollingImages/ScrollingImagesFlushSync";
 import FocusingInput from "@/app/snippets/FocusingInput/FocusingInput";
 import FixDisappearingInput from "@/app/snippets/FixDisappearingInput/FixDisappearingInput";
-import Header from "@/app/components/Header";
 import BioPage from "@/app/snippets/AsyncCallsInEffects/AsyncCallsInEffects";
 
 export default function Page() {
 
     return (
-        <>
-            <Header/>
             <main className="min-h-screen flex flex-col items-center">
 
                 {/*Commented out below as it seems to cause Hydration Error after the images scrolling app was implemented*/}
@@ -164,6 +161,5 @@ export default function Page() {
                 </div>
 
             </main>
-        </>
     );
 }

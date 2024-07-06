@@ -1,15 +1,10 @@
 "use client"
 import './styles.css'
-import Header from "@/app/components/Header";
 
 export default function Page() {
     return (
-    <>
-        <Header/>
-
         <main className="min-h-screen flex flex-col items-center">
-
-        <div className="h-48 app-container">
+            <div className="h-48 app-container">
             <a href="https://tailwindcss.com/docs/hover-focus-and-other-states#before-and-after">
                 Usage of before and after pseudoelements in Tailwind
             </a>
@@ -35,8 +30,7 @@ export default function Page() {
                 </blockquote>
             </div>
         </div>
-
-        <div className="h-48 app-container">
+            <div className="h-48 app-container">
             <a href="">
                 Shades Of Gray Defined in tailwind.config.ts
             </a>
@@ -54,7 +48,6 @@ export default function Page() {
                 </div>
             </div>
         </div>
-</main>
-    </>
+        </main>
    );
 }

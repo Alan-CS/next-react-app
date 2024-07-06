@@ -1,6 +1,5 @@
 "use client"
 
-import Header from "@/app/components/Header";
 import Carousel from "@/app/components/Carousel";
 import {useEffect} from "react";
 
@@ -26,7 +25,6 @@ export default function Home() {
 
   return (
       <div>
-            <Header/>
             <Carousel/>
       </div>
   );
