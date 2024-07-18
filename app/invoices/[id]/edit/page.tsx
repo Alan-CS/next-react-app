@@ -12,8 +12,8 @@ export default async function Page({ params }: { params: { id: string } }) {
   let results = null;
   try {
     results = await Promise.all([fetchInvoiceById(id), fetchCustomers()]);
-  } catch ({ name, message }) {
-    if (message === 'Failed to fetch invoice.') {
+  } catch (err) {
+    if (err instanceof Error && err.message === 'Failed to fetch invoice.') {
       notFound();
     } else {
       throw new Error('Something went wrong!.');
