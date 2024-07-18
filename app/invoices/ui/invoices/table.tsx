@@ -12,12 +12,7 @@ export default async function InvoicesTable({
   currentPage: number;
 }) {
   const invoices = await fetchFilteredInvoices(query, currentPage);
-  invoices.length > 0
-    ? console.log(`invoice amt a = ${invoices[0].amount}`)
-    : '';
-  invoices.length > 1
-    ? console.log(`invoice amt b = ${invoices[1].amount}`)
-    : '';
+
   return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">

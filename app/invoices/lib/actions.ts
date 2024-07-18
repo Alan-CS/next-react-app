@@ -33,8 +33,6 @@ export async function createInvoice(formData: FormData) {
     status: formData.get('status'),
   });
 
-  // console.log(' :: prevState = ', JSON.stringify(prevState, null, 2));
-
   // Prepare data for insertion into the database
   const { customerId, amount, status } = validatedFields;
 
