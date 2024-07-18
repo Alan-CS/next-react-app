@@ -36,7 +36,7 @@ export async function createInvoice(formData: FormData) {
   // console.log(' :: prevState = ', JSON.stringify(prevState, null, 2));
 
   // Prepare data for insertion into the database
-  const { customerId, amount, status } = validatedFields.data;
+  const { customerId, amount, status } = validatedFields;
 
   // ALAN: If you create an invoice with $0.55, then JS converts it to cents as 55.0000000001
   // DB save errors out as the invoice is an integer. This is a floating point conversion error.
