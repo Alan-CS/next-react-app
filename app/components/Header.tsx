@@ -17,8 +17,12 @@ const Header: React.FC = () => {
                 <div id="navbar-collapse-with-animation" className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end py-2 md:py-0 sm:ps-7">
 
-                        <a className="py-3 ps-px sm:px-3 font-medium text-white/80 hover:text-white" href="/snippets">React</a>
-                        <a className="py-3 ps-px sm:px-3 font-medium text-white/80 hover:text-white" href="/css">Tailwind</a>
+                        <a className="py-3 ps-px sm:px-3 font-medium text-white/80 hover:text-white"
+                           href="/invoices">Next-Invoices</a>
+                        <a className="py-3 ps-px sm:px-3 font-medium text-white/80 hover:text-white"
+                           href="/snippets">React</a>
+                        <a className="py-3 ps-px sm:px-3 font-medium text-white/80 hover:text-white"
+                           href="/css">Tailwind</a>
 
                     </div>
                 </div>
