@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). The project uses[`Typescript`](https://www.typescriptlang.org/) and [`Tailwind CSS`](https://tailwindui.com/).
 
-## Getting Started
+## Running the local dev server
 
 First, run the development server:
 
@@ -16,9 +16,17 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Checking for ESLint Errors
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm run lint
+```
+
+## Building the app in production mode
+
+```bash
+npm run build
+```
 
 ## See the Live App on Vercel at the URL below
 
