@@ -55,6 +55,24 @@ const Carousel: React.FC = () => {
                             {/* Item */}
                             <div className="hs-carousel-slide">
                                 <div
+                                    className="h-[30rem] md:h-[calc(100vh-106px)]  flex flex-col bg-[url('https://images.unsplash.com/photo-1721143133240-8b4da5312e83?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-no-repeat">
+                                    <div className="mt-auto w-2/3 md:max-w-lg ps-5 pb-5 md:ps-10 md:pb-10">
+                                        <span className="block text-white">Next JS</span>
+                                        <span className="block text-white text-xl md:text-3xl">A Next JS based invoices tool example taken from the official learning docs.</span>
+                                        <div className="mt-5">
+                                            <a className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl bg-white border border-transparent text-black hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
+                                               href="/invoices">
+                                                View Invoices Tool
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* End Item */}
+
+                            {/* Item */}
+                            <div className="hs-carousel-slide">
+                                <div
                                     className="h-[30rem] md:h-[calc(100vh-106px)]  flex flex-col bg-[url('https://images.unsplash.com/photo-1712843886611-9f42333534e5?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-no-repeat">
                                     <div className="mt-auto w-2/3 md:max-w-lg ps-5 pb-5 md:ps-10 md:pb-10">
                                         <span className="block text-white">CSS</span>
