@@ -1,5 +1,8 @@
 'use client';
 
+// Lastpass extension (in search bar) can cause Hydration Error to appear as per below URL
+// https://stackoverflow.com/questions/45350360/react-16-warning-warning-js36-warning-did-not-expect-server-html-to-contain-a
+
 import {MagnifyingGlassIcon} from '@heroicons/react/24/outline';
 import {useSearchParams, usePathname, useRouter} from 'next/navigation';
 import {useDebouncedCallback} from "use-debounce";
