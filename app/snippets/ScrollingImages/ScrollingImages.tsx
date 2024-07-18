@@ -1,6 +1,5 @@
 import {useRef, useState} from "react";
 import './styles.css';
-import Image from "next/image";
 
 type Img = {
     id: number;
