@@ -15,11 +15,22 @@ import { useForm } from 'react-hook-form';
 export default function Form({ customers }: { customers: CustomerField[] }) {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = (data: any) => {
-    console.log(data);
-    // Call the server action here
-    createInvoice(data);
+  // Saving form was erroring out as server action (createInvoice)
+  // expects a formData object. Hence create a formData object
+  // instead of a plain object
+  const onSubmit = async (data: any) => {
+    const formData = new FormData();
+    formData.append('customerId', data.customerId);
+    formData.append('amount', data.amount.toString());
+    formData.append('status', data.status);
+
+    try {
+      await createInvoice(formData);
+    } catch (error) {
+      console.error('Failed to create invoice:', error);
+    }
   };
+
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
