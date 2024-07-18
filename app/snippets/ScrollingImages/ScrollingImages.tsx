@@ -1,5 +1,6 @@
 import {useRef, useState} from "react";
 import './styles.css';
+import Image from "next/image";
 
 type Img = {
     id: number;
@@ -80,6 +81,7 @@ const ScrollingImages: React.FC = () => {
                                 }
                             }}
                         >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 className={index === i ? 'active' : ''}
                                 src={img.imageUrl}

@@ -76,6 +76,7 @@ const ScrollingImagesFlushSync: React.FC = () => {
                             key={img.id}
                             ref={index === i ? itemRef : null}
                         >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 className={index === i ? 'active' : ''}
                                 src={img.imageUrl}
