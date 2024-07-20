@@ -1,40 +1,33 @@
 'use server';
 
-import { z } from 'zod';
 import { sql } from '@vercel/postgres';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
-const FormSchema = z.object({
-  id: z.string(),
-  customerId: z.string(),
-  amount: z.coerce.number(),
-  status: z.enum(['pending', 'paid']),
-  date: z.string(),
-});
+// TODO: Change CustomFormData to FormData after implementing updateInvoice() method
+import { FormData as CustomFormData, FormSchema, } from '@/app/invoices/lib/types';
 
-const CreateInvoice = FormSchema.omit({ id: true, date: true });
-const UpdateInvoice = FormSchema.omit({ id: true, date: true });
+// ALAN: Not required as id and date are not in the FormSchema
+// const CreateInvoice = FormSchema.omit({ id: true, date: true,});
+// const UpdateInvoice = FormSchema.omit({ id: true, date: true });
 
-export type State = {
-  errors?: {
-    customerId?: string[];
-    amount?: string[];
-    status?: string[];
-  };
-  message?: string | null;
-};
+export async function createInvoice(formData: CustomFormData) {
 
-export async function createInvoice(formData: FormData) {
   // Validate form fields using Zod
-  const validatedFields = CreateInvoice.parse({
-    customerId: formData.get('customerId'),
-    amount: formData.get('amount'),
-    status: formData.get('status'),
-  });
+  const validatedFields = FormSchema.safeParse(formData);
+
+  console.log('validatedFields = ', validatedFields);
+
+  // If form validation fails, return errors. Taken from NextJS learning chapter 14
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      serverErrorMessage: 'Missing Fields. Failed to Create Invoice.',
+    };
+  }
 
   // Prepare data for insertion into the database
-  const { customerId, amount, status } = validatedFields;
+  const {customerId, amount, status} = validatedFields.data;
 
   // ALAN: If you create an invoice with $0.55, then JS converts it to cents as 55.0000000001
   // DB save errors out as the invoice is an integer. This is a floating point conversion error.
@@ -51,20 +44,16 @@ export async function createInvoice(formData: FormData) {
     `;
   } catch (error) {
     return {
-      message: 'Database Error: Failed to Create Invoice.',
+      serverErrorMessage: 'Database Error: Failed to Create Invoice.',
     };
   }
-
   revalidatePath('/invoices');
   redirect('/invoices');
 }
 
+// TODO: Change this and edit-form.tsx to use zod and RHF
 export async function updateInvoice(id: string, formData: FormData) {
-  const { customerId, amount, status } = UpdateInvoice.parse({
-    customerId: formData.get('customerId'),
-    amount: formData.get('amount'),
-    status: formData.get('status'),
-  });
+  const { customerId, amount, status } = FormSchema.parse(formData);
 
   const amountInCents = Math.round(amount * 100);
 
